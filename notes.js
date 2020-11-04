@@ -37,6 +37,15 @@ function removeNote(title) {
     console.log(chalk.green.bold.inverse('Note removed!'))
 }
 
+function listNotes() {
+    const notes = loadNotes();
+
+    console.log(chalk.inverse('Your notes'))
+    notes.forEach(note => {
+        console.log(note.title)
+    })
+}
+
 function saveNotes(notes) {
     const dataJSON = JSON.stringify(notes, null, 4)
     fs.writeFileSync('notes.json', dataJSON);
@@ -56,5 +65,6 @@ function loadNotes() {
 module.exports = {
     getNotes,
     addNote,
-    removeNote
+    removeNote,
+    listNotes
 }
