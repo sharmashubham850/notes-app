@@ -7,4 +7,6 @@ npm install
 ```
 
 ## Usage
+```
 node app.js --help
+```
